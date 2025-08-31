@@ -35,7 +35,7 @@ contract Lending is Ownable, ReentrancyGuard {
         IERC20 _collateralToken,
         IERC20 _borrowToken,
         PriceOracle _priceOracle
-    ) Ownable(msg.sender) {
+    ) {
         collateralToken = _collateralToken;
         borrowToken = _borrowToken;
         priceOracle = _priceOracle;

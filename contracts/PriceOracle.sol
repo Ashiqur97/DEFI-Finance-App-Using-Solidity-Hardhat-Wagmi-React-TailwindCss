@@ -8,7 +8,9 @@ contract PriceOracle is Ownable {
     
     event PriceUpdated(address indexed token, uint256 price);
     
-    constructor() Ownable(msg.sender) {}
+    constructor() {
+        // The owner is automatically set to msg.sender by Ownable
+    }
     
     function setPrice(address token, uint256 price) external onlyOwner {
         require(price > 0, "Price must be > 0");

@@ -43,5 +43,33 @@ async function main() {
     await swap.deployed();
     console.log("Swap deployed to:", swap.address);
 
-    
+
+
+  await collateralToken.mint(deployer.address, ethers.utils.parseUnits("10000", 18));
+  await borrowToken.mint(deployer.address, ethers.utils.parseUnits("10000", 18));
+  console.log("Tokens minted to deployer");
+
+  await collateralToken.approve(swap.address, ethers.utils.parseUnits("5000", 18));
+  await borrowToken.approve(swap.address, ethers.utils.parseUnits("5000", 18));
+  await collateralToken.transfer(swap.address, ethers.utils.parseUnits("5000", 18));
+  await borrowToken.transfer(swap.address, ethers.utils.parseUnits("5000", 18));
+  console.log("Liquidity added to Swap contract");
+
+  console.log("\nDeployment Summary:");
+  console.log("Collateral Token:", collateralToken.address);
+  console.log("Borrow Token:", borrowToken.address);
+  console.log("Price Oracle:", priceOracle.address);
+  console.log("Lending Contract:", lending.address);
+  console.log("Swap Contract:", swap.address);
+
 }
+
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+});
+
+
+

@@ -28,7 +28,7 @@ contract Swap is Ownable {
         IERC20 _tokenA,
         IERC20 _tokenB,
         PriceOracle _priceOracle
-    ) Ownable(msg.sender) {
+    ) {
         tokenA = _tokenA;
         tokenB = _tokenB;
         priceOracle = _priceOracle;
