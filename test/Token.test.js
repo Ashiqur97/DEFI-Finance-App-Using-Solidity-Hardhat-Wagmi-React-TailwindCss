@@ -35,5 +35,10 @@ describe("Token", function () {
     const addr1Balance = await token.balanceOf(addr1.address);
     expect(addr1Balance).to.equal(100);
   });
-  
+
+  it("Should fail if non-owner tries to mint", async function () {
+    await expect(
+      token.connect(addr1).mint(addr1.address, 100)
+    ).to.be.revertedWith("Ownable: caller is not the owner");
+  });
 });
