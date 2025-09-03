@@ -22,6 +22,13 @@ describe ("Swap", function () {
 
         tokenB = await Token.deploy("Token B","TB");
         await tokenB.deployed();
+
+        PriceOracle = await ethers.getContractFactory("PriceOracle");
+        priceOracle = await PriceOracle.deploy();
+        await priceOracle.deployed();
+
+        await priceOracle.setPrice(tokenA.address,ethers.utils.parseUnits("1",18));
+        await priceOracle.setPrice(tokenB.address,ethers.utils.parseUnits("1",18));
     })
 
 })
