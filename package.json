@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.87.1",
-    "ethers": "^6.15.0",
+    "ethers": "^5.7.2",
     "viem": "^2.37.5",
     "wagmi": "^2.16.9"
   }
