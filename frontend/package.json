@@ -12,6 +12,8 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "@wagmi/connectors": "^5.9.9",
+    "@wagmi/core": "^2.20.3",
     "ethers": "^6.15.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
